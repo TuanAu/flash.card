@@ -23,6 +23,7 @@ export default function Empty() {
       </div>
       <button
         className="bg-black pt-1 pb-1 pl-2 pr-2 rounded-lg text-white cursor-pointer 
+        hover:bg-linear-to-tr hover:from-indigo-600 hover:to-indigo-950 hover:from-15% hover:to-75%
         active:bg-linear-to-tr active:from-indigo-600 active:to-indigo-950 active:from-15% active:to-75%
         transition duration-800"
         onClick={addNewStack}
