@@ -12,7 +12,7 @@ function App() {
         </div>
       </div>
 
-      {/* <FlashCardMain></FlashCardMain> */}
+      <FlashCardMain></FlashCardMain>
     </div>
   );
 }

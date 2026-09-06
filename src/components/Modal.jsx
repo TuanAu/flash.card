@@ -13,14 +13,6 @@ export default function Modal({ open, close, children }) {
            dark:bg-linear-to-bl/oklab dark:from-neutral-900 dark:to-indigo-900"
           onClick={(e) => e.stopPropagation()}
         >
-          <button
-            onClick={close}
-            className="absolute right-4 top-4 text-gray-400 hover:text-gray-900"
-            aria-label="Close"
-          >
-            ✕
-          </button>
-
           {children}
         </div>
       </div>
