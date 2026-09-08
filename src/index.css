@@ -25,7 +25,8 @@ body {
 }
 
 i,
-p{
+p,
+label{
   @apply text-gray-500 dark:text-gray-400;
 }
 

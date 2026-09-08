@@ -51,3 +51,18 @@ export function addStack(name) {
     });
   });
 }
+
+
+export function getStack(stackId) {
+  return dbPromise.then((db) => {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, "readonly");
+      const store = tx.objectStore(STORE_NAME);
+
+      const request = store.get(stackId)
+
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = (e) => reject(e.target.error);
+    });
+  });
+}
