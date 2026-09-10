@@ -8,7 +8,9 @@ function App() {
         bg-linear-to-tr from-indigo-600 via-violet-900 to-indigo-900
         from-10% via-80%"
         >
-          <p className="text-white! font-bold">Tuan Au - Microfrontend</p>
+          <p className="text-white! font-bold">
+            <a href="https://tuanau.com">Tuan Au</a> - Microfrontend
+          </p>
         </div>
       </div>
 
