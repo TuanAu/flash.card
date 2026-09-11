@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCards } from "../db/database";
 import EmptyCard from "./EmptyCard";
-
+import CardList from "./CardList";
 export default function StackDetail({ stackId, goBack }) {
   const [cards, setCards] = useState([]);
 
@@ -29,7 +29,7 @@ export default function StackDetail({ stackId, goBack }) {
       {cards.length === 0 ? (
         <EmptyCard stackId={stackId} setCards={setCards} />
       ) : (
-        <div>hehe</div>
+        <CardList cards={cards} />
       )}
     </div>
   );

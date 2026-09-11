@@ -47,9 +47,9 @@ export default function Stacks({ stacks, setStacks, selectStack }) {
               flex justify-center items-center p-3 rounded-xl
               cursor-pointer
               bg-linear-to-bl 
-              from-neutral-900 to-indigo-800
+              from-neutral-950 to-indigo-900
               from-10% via-70% to-90%
-              hover:shadow-md shadow-indigo-500/50`}
+              hover:shadow-md active:shadow-md shadow-indigo-500/50`}
               onClick={() => selectStack(stack.id)}
             >
               <p className="w-full mt-0 text-lg line-clamp-4 hyphens-auto break-words text-white! font-medium">

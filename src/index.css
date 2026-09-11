@@ -26,14 +26,13 @@ body {
 
 i,
 p,
-label{
+label {
   @apply text-gray-500 dark:text-gray-400;
 }
 
 #microfrontend-page {
-  view-transition-name: microfrontend-page ;
+  view-transition-name: microfrontend-page;
 }
-
 
 @keyframes typing {
   from {
@@ -205,4 +204,40 @@ label{
 
 .animate-slide-up {
   animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes cardSlideDown {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  50% {
+    clip-path: inset(0 0 50% 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+.animate-card-slide-down {
+  animation: cardSlideDown 0.3s linear forwards;
+}
+
+@keyframes cardSlideUp {
+  0% {
+    clip-path: inset(0 0 0% 0);
+  }
+
+  50% {
+    clip-path: inset(0 0 50% 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+.animate-card-slide-up {
+  animation: cardSlideUp 0.3s linear forwards;
 }
