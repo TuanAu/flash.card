@@ -20,7 +20,6 @@ export default function FlashCardMain() {
   }, []);
 
   const selectStack = (stack) => {
-    console.log(stack);
     setSelectedStack(stack);
   };
 

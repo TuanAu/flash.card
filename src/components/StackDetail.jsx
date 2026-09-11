@@ -29,7 +29,7 @@ export default function StackDetail({ stackId, goBack }) {
       {cards.length === 0 ? (
         <EmptyCard stackId={stackId} setCards={setCards} />
       ) : (
-        <CardList cards={cards} />
+        <CardList  stackId={stackId} setCards={setCards} cards={cards} />
       )}
     </div>
   );

@@ -28,7 +28,7 @@ export default function EmptyCard({ stackId, setCards }) {
       console.log(cardId);
       setCards((stacks) => [
         ...stacks,
-        { id: cardId, stackId: stackId, name: prompt, answer: answer },
+        { id: cardId, stackId: stackId, prompt: prompt, answer: answer },
       ]);
     });
 
