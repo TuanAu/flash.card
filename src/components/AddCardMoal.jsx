@@ -6,7 +6,6 @@ export default function AddCardModal({
   onCloseModal,
   saveNewStack,
 }) {
-  console.log("openModal", openModal);
   return (
     <Modal open={openModal} close={onCloseModal}>
       <p className="mt-0 text-lg font-semibold dark:text-white!">

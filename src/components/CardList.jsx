@@ -15,15 +15,15 @@ function CardDetail({ card }) {
   return (
     <div className="mt-8">
       <div
-        className={`min-h-[3rem] px-5 pt-8 pb-8 cursor-pointer
-            ${
-              showAnswer
-                ? "bg-neutral-950"
-                : "bg-linear-to-r from-neutral-950 to-indigo-950 from-65%"
-            }`}
+        className="min-h-[3rem] px-5 pt-8 pb-8 cursor-pointer relative bg-neutral-950"
         onClick={onClickPrompt}
       >
-        <p className="w-full m-0 break-all hyphens-auto text-white!">
+        <div
+          className={`absolute inset-0 bg-linear-to-r from-neutral-950 to-indigo-950 from-65%
+            transition-opacity duration-700
+            ${showAnswer ? "opacity-0" : "opacity-100"}`}
+        ></div>
+        <p className="relative w-full m-0 break-all hyphens-auto text-white!">
           {card.prompt}
         </p>
       </div>
@@ -43,7 +43,7 @@ function CardDetail({ card }) {
             </div>
             <div className="flex-8 min-h-[8rem] flex flex-col transition-colors duration-1000 bg-olive-200 dark:bg-neutral-900">
               <div className="grow bg-linear-to-br from-neutral-950 to-indigo-950 from-45% rounded-bl-[40px] rounded-br-[40px]">
-                <p className="m-0 w-full break-all hyphens-auto pt-3 pb-8 px-5">
+                <p className="m-0 w-full break-all hyphens-auto pt-3 pb-8 px-5 text-gray-400!">
                   {card.answer}
                 </p>
               </div>
@@ -56,7 +56,6 @@ function CardDetail({ card }) {
 }
 
 export default function CardList({ stackId, setCards, cards }) {
-  console.log("LSSS", cards);
   const [openAddCard, setOpenAddCard] = useState(false);
 
   const onCloseAddCardModal = () => {
@@ -67,7 +66,6 @@ export default function CardList({ stackId, setCards, cards }) {
     const prompt = data.get("prompt");
     const answer = data.get("answer");
     addCard(stackId, prompt, answer).then((cardId) => {
-      console.log(cardId);
       setCards((stacks) => [
         ...stacks,
         { id: cardId, stackId: stackId, prompt: prompt, answer: answer },

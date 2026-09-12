@@ -10,7 +10,6 @@ export default function EmptyCard({ stackId, setCards }) {
   useEffect(() => {
     async function getCardsFromDB() {
       const cards = await getCards(stackId);
-      console.log(cards);
       setCards(cards);
     }
 
@@ -25,7 +24,6 @@ export default function EmptyCard({ stackId, setCards }) {
     const prompt = data.get("prompt");
     const answer = data.get("answer");
     addCard(stackId, prompt, answer).then((cardId) => {
-      console.log(cardId);
       setCards((stacks) => [
         ...stacks,
         { id: cardId, stackId: stackId, prompt: prompt, answer: answer },

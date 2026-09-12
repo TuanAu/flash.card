@@ -8,7 +8,6 @@ export default function StackDetail({ stackId, goBack }) {
   useEffect(() => {
     async function getCardsFromDB() {
       const cards = await getCards(stackId);
-      console.log(cards);
       setCards(cards);
     }
 
