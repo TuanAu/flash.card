@@ -83,7 +83,7 @@ export default function CardList({ stackId, setCards, cards }) {
             setOpenAddCard(true);
           }}
         >
-          Add a card
+          Add more card
         </Button>
         <AddCardModal
           openModal={openAddCard}
