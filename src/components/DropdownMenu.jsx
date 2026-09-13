@@ -8,9 +8,10 @@ export function DropdownTrigger({ children }) {
 //     hover:from-violet-400! hover:via-violet-500! hover:to-indigo-500!
 export function DropdownContent({ children }) {
   const content = children.map((child) => {
-    const hoverClass = `dark:text-white! mt-0 
+    const hoverClass = `text-sm dark:text-white! mt-0 
     bg-linear-to-br bg-clip-text from-violet-400 via-violet-500 to-indigo-500 
-    hover:text-transparent! dark:hover:text-transparent! `;
+    hover:text-transparent! dark:hover:text-transparent! 
+    active:text-transparent! dark:active:text-transparent! `;
     const existingClass = child.props.className || "";
     const newClass = existingClass + " " + hoverClass;
     const cloneElement = React.cloneElement(child, { className: newClass });
