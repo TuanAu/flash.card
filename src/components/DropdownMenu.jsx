@@ -7,7 +7,7 @@ export function DropdownTrigger({ children }) {
 export function DropdownContent({ children }) {
   const content = children.map((child) => {
     const hoverClass = `text-sm dark:text-white! mt-0 
-    bg-linear-to-br bg-clip-text from-indigo-300 via-violet-500 to-indigo-600 from-10% via-40%
+    bg-linear-to-br bg-clip-text from-indigo-300 via-violet-500 to-indigo-600 from-10% via-50% to-90%
     hover:text-transparent! dark:hover:text-transparent! 
     active:text-transparent! dark:active:text-transparent! `;
     const existingClass = child.props.className || "";
