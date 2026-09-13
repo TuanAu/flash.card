@@ -1,7 +1,8 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import AddCardModal from "./AddCardMoal";
 import { addCard } from "../db/database";
 import Button from "./Button";
+import DropdownMenu, { DropdownContent, DropdownTrigger } from "./DropdownMenu";
 
 function CardDetail({ card }) {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -77,14 +78,21 @@ export default function CardList({ stackId, setCards, cards }) {
   return (
     <div>
       <div className="flex justify-end mt-8">
-        <Button
-          variant={"primary"}
-          click={() => {
-            setOpenAddCard(true);
-          }}
-        >
-          Add more card
-        </Button>
+        <DropdownMenu>
+          <DropdownTrigger>
+            <Button variant={"primary"}>Menu</Button>
+          </DropdownTrigger>
+          <DropdownContent>
+            <p>Showcase</p>
+            <p
+              onClick={() => {
+                setOpenAddCard(true);
+              }}
+            >
+              Add more card
+            </p>
+          </DropdownContent>
+        </DropdownMenu>
         <AddCardModal
           openModal={openAddCard}
           onCloseModal={onCloseAddCardModal}
