@@ -8,8 +8,9 @@ export function DropdownTrigger({ children }) {
 //     hover:from-violet-400! hover:via-violet-500! hover:to-indigo-500!
 export function DropdownContent({ children }) {
   const content = children.map((child) => {
-    const hoverClass = `hover:bg-linear-to-br hover:bg-clip-text hover:text-transparent! hover:from-violet-400 via-violet-500 hover:to-indigo-500 
-    active:bg-linear-to-br active:bg-clip-text active:text-transparent! active:from-violet-400 via-violet-500 active:to-indigo-500`;
+    const hoverClass = `dark:text-white! mt-0 
+    bg-linear-to-br bg-clip-text from-violet-400 via-violet-500 to-indigo-500 
+    hover:text-transparent! dark:hover:text-transparent! `;
     const existingClass = child.props.className || "";
     const newClass = existingClass + " " + hoverClass;
     const cloneElement = React.cloneElement(child, { className: newClass });
@@ -20,6 +21,7 @@ export function DropdownContent({ children }) {
 }
 export default function DropdownMenu({ children }) {
   const [showMenu, setShowMenu] = useState(false);
+  const buttonRef = useRef(null);
   const menuRef = useRef(null);
 
   const trigger = children[0];
@@ -27,7 +29,10 @@ export default function DropdownMenu({ children }) {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (buttonRef.current.contains(event.target)) {
+        return;
+      }
+      if (!menuRef.current.contains(event.target)) {
         setShowMenu(false);
       }
     }
@@ -39,21 +44,20 @@ export default function DropdownMenu({ children }) {
     };
   }, []);
 
-  const handleClickTrigger = (event) => {
-    if (menuRef.current === null) {
-      menuRef.current = event.target;
-    }
-    console.log(menuRef.current);
+  const handleClickTrigger = () => {
     setShowMenu((currentState) => !currentState);
   };
 
   return (
     <div className="relative">
-      <div onClick={handleClickTrigger}>{trigger}</div>
+      <div ref={buttonRef} onClick={handleClickTrigger}>
+        {trigger}
+      </div>
       {showMenu ? (
         <div
           ref={menuRef}
-          className="absolute z-50 bg-white px-2 py-3 w-full flex flex-col gap-3 shadow-xl/20 rounded-lg cursor-pointer"
+          className="absolute z-50 bg-white dark:bg-black
+          px-2 py-3 w-full flex flex-col gap-3 shadow-xl/20 rounded-lg cursor-pointer"
         >
           {content}
         </div>
