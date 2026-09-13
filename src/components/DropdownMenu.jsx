@@ -4,12 +4,10 @@ export function DropdownTrigger({ children }) {
   return <div className="mb-1">{children}</div>;
 }
 
-// hover:bg-linear-to-br! hover:bg-clip-text! hover:text-trans! hover:text-semibold!
-//     hover:from-violet-400! hover:via-violet-500! hover:to-indigo-500!
 export function DropdownContent({ children }) {
   const content = children.map((child) => {
     const hoverClass = `text-sm dark:text-white! mt-0 
-    bg-linear-to-br bg-clip-text from-violet-400 via-violet-500 to-indigo-500 
+    bg-linear-to-br bg-clip-text from-indigo-300 via-violet-500 to-indigo-600 from-10% via-40%
     hover:text-transparent! dark:hover:text-transparent! 
     active:text-transparent! dark:active:text-transparent! `;
     const existingClass = child.props.className || "";
@@ -58,7 +56,8 @@ export default function DropdownMenu({ children }) {
         <div
           ref={menuRef}
           className="absolute z-50 bg-white dark:bg-black
-          px-2 py-3 w-full flex flex-col gap-3 shadow-xl/20 rounded-lg cursor-pointer"
+          px-3 py-3 w-full flex flex-col gap-3 rounded-lg cursor-pointer 
+          shadow-md/50 shadow-indigo-500/50"
         >
           {content}
         </div>

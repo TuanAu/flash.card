@@ -83,7 +83,7 @@ export default function CardList({ stackId, setCards, cards }) {
             <Button variant={"primary"}>Menu</Button>
           </DropdownTrigger>
           <DropdownContent>
-            <p>Showcase</p>
+            <p>Present</p>
             <p
               onClick={() => {
                 setOpenAddCard(true);
