@@ -34,7 +34,7 @@ export default function StackDetail({ stackId, goBack }) {
     <div>
       <div>
         <p
-          className="cursor-pointer underline underline-offset-3
+          className="cursor-pointer underline underline-offset-3 w-fit
         decoration-pink-500/50 dark:decoration-pink-500/60 hover:decoration-wavy active:decoration-wavy"
           onClick={goBack}
         >
